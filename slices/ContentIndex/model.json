@@ -1,0 +1,54 @@
+{
+  "id": "content_index",
+  "type": "SharedSlice",
+  "name": "ContentIndex",
+  "description": "ContentIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "services": {
+          "type": "Select",
+          "config": {
+            "label": "Content Type",
+            "placeholder": "",
+            "options": [
+              "Service",
+              "Project",
+              "Blog",
+              "Testimonial"
+            ],
+            "default_value": "Service"
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        },
+        "cardviewtext": {
+          "type": "Text",
+          "config": {
+            "label": "CardViewText",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

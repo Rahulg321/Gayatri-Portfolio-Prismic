@@ -1,0 +1,29 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "letter",
+				"type": "Text"
+			},
+			"services": {
+				"__TYPE__": "FieldContent",
+				"value": "Service",
+				"type": "Select"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "mine",
+				"type": "Text"
+			},
+			"cardviewtext": {
+				"__TYPE__": "FieldContent",
+				"value": "spend",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,26 @@
+{
+  "id": "description_slice",
+  "type": "SharedSlice",
+  "name": "DescriptionSlice",
+  "description": "DescriptionSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
