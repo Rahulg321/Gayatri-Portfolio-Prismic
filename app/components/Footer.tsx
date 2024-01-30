@@ -7,46 +7,42 @@ import { GiCircleClaws } from "react-icons/gi";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-secondary py-12">
+    <footer className="bg-primary text-secondary py-8">
       <div className="big-container">
-        <div className="flex items-center justify-around justify-items-start flex-col md:flex-row  border-b pb-4">
-          <div className="flex flex-col gap-2 ">
-            <h4 className="font-bold text-2xl mb-2">About</h4>
-            <span>Company </span>
-            <span>Community</span>
-            <span>Careers</span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h4 className="font-bold text-2xl mb-2">Blogs</h4>
-            <span>Tech </span>
-            <span>Adventure</span>
-            <span>Travel</span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h4 className="font-bold text-2xl mb-2">Services</h4>
-            <span>Writing </span>
-            <span>Drafting</span>
-            <span>Case Study</span>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="text-3xl">
-                <GiCircleClaws />
-              </div>
-              <h4 className="font-bold italic text-3xl underline underline-offset-8">
-                Gayatri Law Offices
-              </h4>
+        <div className="border-b-2 md:items-center justify-start pb-2 flex flex-col sm:flex-row sm:justify-between">
+          <div className="justify-start">
+            <span className="font-bold text-2xl">Gayatri Gupta</span>
+            <div className="flex gap-4">
+              <span>Blog</span>
+              <span className="">Testimonials</span>
+              <span className="">Contact</span>
+              <span>About</span>
             </div>
-            <div className="flex gap-2 mt-6 justify-around">
-              <SocialMediaIcon MediaIcon={FaLinkedin} />
-              <SocialMediaIcon MediaIcon={FaInstagram} />
-              <SocialMediaIcon MediaIcon={FaXTwitter} />
+          </div>
+          <div className="flex flex-col">
+            <span>Join my newsletter</span>
+            <div className="flex items-center">
+              <input
+                type="text"
+                placeholder="Email Address..."
+                className="px-2 py-2 border"
+              />
+              <button className="border-secondary border-2 p-2 ml-2">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
-        <div className="text-right mt-4">
-          <span>&copy; 2024 Gayatri Law Offices All rights reserved</span>
+
+        <div className="flex mt-2 flex-col sm:flex-row justify-between">
+          <div>
+            <span> &#169; All rights reserved</span>
+          </div>
+          <div className="flex gap-4 mt-2 md:m-0">
+            <SocialMediaIcon MediaIcon={FaLinkedin} />
+            <SocialMediaIcon MediaIcon={FaInstagram} />
+            <SocialMediaIcon MediaIcon={FaXTwitter} />
+          </div>
         </div>
       </div>
     </footer>

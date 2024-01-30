@@ -4,9 +4,18 @@ import dynamic from "next/dynamic";
 
 export const components = {
   about_hero: dynamic(() => import("./Biography")),
+  blog_content_index: dynamic(() => import("./BlogContentIndex")),
+  blog_featured_articles: dynamic(() => import("./BlogFeaturedArticles")),
+  blog_hero: dynamic(() => import("./BlogHero")),
+  contact_form: dynamic(() => import("./ContactForm")),
+  contact_hero: dynamic(() => import("./ContactHero")),
   content_index: dynamic(() => import("./ContentIndex")),
   description_slice: dynamic(() => import("./DescriptionSlice")),
   hero: dynamic(() => import("./Hero")),
   home_services: dynamic(() => import("./HomeServices")),
+  my_goal: dynamic(() => import("./MyGoal")),
+  my_mission: dynamic(() => import("./MyMission")),
   rich_text_slice: dynamic(() => import("./RichTextSlice")),
+  testimonial_content_index: dynamic(() => import("./TestimonialContentIndex")),
+  testimonial_hero: dynamic(() => import("./TestimonialHero")),
 };

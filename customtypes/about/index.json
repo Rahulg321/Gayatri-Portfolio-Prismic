@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "my_goal": {
+              "type": "SharedSlice"
+            },
+            "my_mission": {
+              "type": "SharedSlice"
+            },
             "about_hero": {
               "type": "SharedSlice"
             }

@@ -27,32 +27,7 @@
           }
         }
       },
-      "items": {
-        "section_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Section Heading",
-            "placeholder": ""
-          }
-        },
-        "section_image": {
-          "type": "Image",
-          "config": {
-            "label": "Section Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "section_content": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Section Content",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

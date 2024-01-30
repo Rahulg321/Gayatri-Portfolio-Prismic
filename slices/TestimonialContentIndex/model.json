@@ -1,0 +1,18 @@
+{
+  "id": "testimonial_content_index",
+  "type": "SharedSlice",
+  "name": "TestimonialContentIndex",
+  "description": "TestimonialContentIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

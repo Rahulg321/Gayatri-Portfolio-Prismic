@@ -1,0 +1,33 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"formheading": {
+				"__TYPE__": "FieldContent",
+				"value": "ran",
+				"type": "Text"
+			},
+			"form_description": {
+				"__TYPE__": "FieldContent",
+				"value": "younger",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"adjective",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "chair",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

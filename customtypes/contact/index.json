@@ -6,29 +6,29 @@
   "status": true,
   "json": {
     "Main": {
-      "heading": {
-        "type": "Text",
-        "config": {
-          "label": "Heading",
-          "placeholder": ""
-        }
-      },
-      "contact_tagline": {
-        "type": "Text",
-        "config": {
-          "label": "Contact Tagline",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "contact_form": {
+              "type": "SharedSlice"
+            },
+            "contact_hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -46,13 +46,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }

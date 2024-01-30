@@ -6,25 +6,21 @@
   "status": true,
   "json": {
     "Main": {
-      "heading": {
-        "type": "Text",
-        "config": {
-          "label": "Heading",
-          "placeholder": ""
-        }
-      },
-      "tagline": {
-        "type": "Text",
-        "config": {
-          "label": "Tagline",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "blog_featured_articles": {
+              "type": "SharedSlice"
+            },
+            "blog_content_index": {
+              "type": "SharedSlice"
+            },
+            "blog_hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

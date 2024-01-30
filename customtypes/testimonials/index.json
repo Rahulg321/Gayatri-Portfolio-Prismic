@@ -54,6 +54,22 @@
         "config": {
           "choices": {}
         }
+      },
+      "upwork_profile_link": {
+        "type": "Link",
+        "config": {
+          "label": "Upwork Profile Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedin_profile_link": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn Profile Link",
+          "placeholder": "",
+          "select": null
+        }
       }
     }
   }

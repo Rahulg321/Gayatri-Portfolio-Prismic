@@ -3,6 +3,8 @@ import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { PrismicPreview } from "@prismicio/next";
+import { createClient, repositoryName } from "@/prismicio";
 
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -20,12 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background text-black">
       <body className={nunito_sans.className}>
-        <main className="parent-container">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <Header />
+        {children}
+        <Footer />
       </body>
+      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

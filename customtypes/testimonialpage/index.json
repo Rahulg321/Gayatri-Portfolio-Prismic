@@ -10,21 +10,14 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
-        }
-      },
-      "heading": {
-        "type": "Text",
-        "config": {
-          "label": "Heading",
-          "placeholder": ""
-        }
-      },
-      "tagline": {
-        "type": "Text",
-        "config": {
-          "label": "Tagline",
-          "placeholder": ""
+          "choices": {
+            "testimonial_content_index": {
+              "type": "SharedSlice"
+            },
+            "testimonial_hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

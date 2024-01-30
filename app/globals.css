@@ -31,3 +31,20 @@
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
 }
+
+.heading {
+  margin-bottom: 0.4em;
+}
+
+.heading::after {
+  content: "";
+  height: 1px;
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+  background-color: #0a0a0a;
+}
+
+.prose li::before {
+  color: #000000; /* Use the same color as your text-primary class */
+}

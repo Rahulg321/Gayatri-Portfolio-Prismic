@@ -1,0 +1,43 @@
+{
+  "id": "my_mission",
+  "type": "SharedSlice",
+  "name": "MyMission",
+  "description": "MyMission",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "mission_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Mission Heading",
+            "placeholder": ""
+          }
+        },
+        "mission_image": {
+          "type": "Image",
+          "config": {
+            "label": "Mission Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "mission_statement": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Mission Statement",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
