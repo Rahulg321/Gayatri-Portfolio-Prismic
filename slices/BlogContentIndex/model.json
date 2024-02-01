@@ -10,7 +10,24 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "blog_index_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Blog Index Heading",
+            "placeholder": ""
+          }
+        },
+        "blog_index_subhead": {
+          "type": "Text",
+          "config": {
+            "label": "Blog Index Subhead",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

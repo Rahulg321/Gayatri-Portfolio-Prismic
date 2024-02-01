@@ -19,7 +19,7 @@ export default function NavBar({
 
   return (
     <nav aria-label="Main navigation">
-      <ul className="flex flex-col justify-between rounded-b-lg bg-slate-50 px-4 py-2 md:m-4 md:flex-row md:items-center md:rounded-xl">
+      <ul className="flex flex-col justify-between rounded-b-lg border border-primary bg-slate-50 px-4 py-2 md:m-4 md:flex-row md:items-center md:rounded-xl">
         <div className="flex items-center justify-between">
           <NameLogo name={settings.data.name} />
           <button
@@ -115,9 +115,10 @@ function DesktopMenu({
   pathname: string;
 }) {
   return (
-    <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
+    <div className="relative z-50 hidden flex-row items-center gap-1  bg-transparent py-0 md:flex">
       {settings.data.navitems.map(({ navlabel, navlink }, index) => (
         <React.Fragment key={navlabel}>
+          {pathname.includes(asLink(navlink) as string)}
           <li>
             <PrismicNextLink
               className={clsx(

@@ -20,8 +20,12 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div className="rounded-2xl p-4 shadow-xl">
-      <div className="aspect-h-1 aspect-w-1 mx-auto">
-        <PrismicNextImage field={image} className="rounded-full object-cover" />
+      <div className="aspect-h-1 aspect-w-1 relative mx-auto">
+        <PrismicNextImage
+          field={image}
+          fill
+          className="rounded-full object-cover"
+        />
       </div>
       <div>
         <div className="my-4 text-center">

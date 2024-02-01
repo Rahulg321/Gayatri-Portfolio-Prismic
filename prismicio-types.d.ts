@@ -97,6 +97,17 @@ interface BlogpostDocumentData {
   date_published: prismic.DateField;
 
   /**
+   * Blog Hero Image field in *BlogPost*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.blog_hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  blog_hero_image: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *BlogPost*
    *
    * - **Field Type**: Slice Zone
@@ -108,15 +119,15 @@ interface BlogpostDocumentData {
   slices: prismic.SliceZone<BlogpostDocumentDataSlicesSlice>;
 
   /**
-   * Blog Hero Image field in *BlogPost*
+   * Small Description field in *BlogPost*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blogpost.blog_hero_image
+   * - **API ID Path**: blogpost.small_description
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  blog_hero_image: prismic.ImageField<never> /**
+  small_description: prismic.KeyTextField /**
    * Meta Title field in *BlogPost*
    *
    * - **Field Type**: Text
@@ -936,6 +947,31 @@ export type AboutHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *BlogContentIndex → Primary*
+ */
+export interface BlogContentIndexSliceDefaultPrimary {
+  /**
+   * Blog Index Heading field in *BlogContentIndex → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_content_index.primary.blog_index_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  blog_index_heading: prismic.KeyTextField;
+
+  /**
+   * Blog Index Subhead field in *BlogContentIndex → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_content_index.primary.blog_index_subhead
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  blog_index_subhead: prismic.KeyTextField;
+}
+
+/**
  * Default variation for BlogContentIndex Slice
  *
  * - **API ID**: `default`
@@ -944,7 +980,7 @@ export type AboutHeroSlice = prismic.SharedSlice<
  */
 export type BlogContentIndexSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<BlogContentIndexSliceDefaultPrimary>,
   never
 >;
 
@@ -1713,6 +1749,7 @@ declare module "@prismicio/client" {
       AboutHeroSliceVariation,
       AboutHeroSliceDefault,
       BlogContentIndexSlice,
+      BlogContentIndexSliceDefaultPrimary,
       BlogContentIndexSliceVariation,
       BlogContentIndexSliceDefault,
       BlogFeaturedArticlesSlice,

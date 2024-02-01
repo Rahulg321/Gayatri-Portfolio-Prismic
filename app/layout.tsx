@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
+import { Toaster } from "react-hot-toast";
 
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster position="top-center" />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>

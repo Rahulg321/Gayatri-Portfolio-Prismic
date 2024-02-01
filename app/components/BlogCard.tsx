@@ -11,54 +11,24 @@ type BlogCardProps = {
   image: ImageField;
   classname?: string;
   title: KeyTextField;
-  tags: string[];
-  lastPublishedDate: string;
+  smallDescription: KeyTextField;
 };
 
 const BlogCard = ({
   image,
   title,
-  tags,
-  lastPublishedDate,
   classname,
+  smallDescription,
 }: BlogCardProps) => {
-  const formattedDate = formatDateString(lastPublishedDate);
-
   return (
-    <div className="mt-4 flex cursor-pointer flex-col gap-4 rounded-2xl border border-gray-500 px-6 py-4 transition  hover:shadow-xl md:flex-row">
-      <div className="aspect-h-2 aspect-w-3 sm:aspect-h-1 sm:aspect-w-1   md:aspect-h-1 md:aspect-w-5 md:basis-1/4">
-        <PrismicNextImage field={image} className="cover h-full w-full" />
+    <div className="cursor-pointer gap-4 bg-gray-200 transition  ">
+      <div className="aspect-h-1 aspect-w-1 relative md:aspect-h-3 md:aspect-w-4">
+        <PrismicNextImage field={image} fill className="cover h-full w-full" />
       </div>
-      <div className="flex basis-3/4 flex-col justify-between">
-        <div className="flex justify-between">
-          <div>
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="rounded-3xl bg-pink-300 px-2 odd:bg-red-300 even:mx-2"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <span className="text-xs text-gray-600 md:text-sm">
-            {formattedDate}
-          </span>
-        </div>
-        <div>
-          <span className="text-xl font-bold md:text-4xl">{title}</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="">
-            <Image
-              src={GayatriPic}
-              alt="face forward pic/selfie of gayatri"
-              className="h-[40px] w-[40px] rounded-full object-cover"
-            />
-          </div>
-
-          <span className="font-semibold italic">Gayatri Gupta</span>
-        </div>
+      <div className="px-6 py-8">
+        <span className="text-3xl font-extrabold">{title}</span>
+        <span className="my-4 block">{smallDescription}</span>
+        <span className="block text-xl font-bold text-blue-600">Read More</span>
       </div>
     </div>
   );

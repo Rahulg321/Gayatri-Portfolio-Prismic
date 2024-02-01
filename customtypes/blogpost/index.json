@@ -26,6 +26,14 @@
           "placeholder": ""
         }
       },
+      "blog_hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Blog Hero Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -37,12 +45,11 @@
           }
         }
       },
-      "blog_hero_image": {
-        "type": "Image",
+      "small_description": {
+        "type": "Text",
         "config": {
-          "label": "Blog Hero Image",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Small Description",
+          "placeholder": ""
         }
       }
     },

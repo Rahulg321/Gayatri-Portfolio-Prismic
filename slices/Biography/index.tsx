@@ -1,6 +1,7 @@
 import Heading from "@/app/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import HeroSection from "@/app/components/HeroSection";
 
 /**
  * Props for `AboutHero`.
@@ -12,14 +13,11 @@ export type AboutHeroProps = SliceComponentProps<Content.AboutHeroSlice>;
  */
 const AboutHero = ({ slice }: AboutHeroProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className="flex min-h-[80vh] flex-col items-center justify-center bg-primary"
-    >
-      <Heading className="text-secondary">{slice.primary.heading}</Heading>
-      <span className="text-secondary">{slice.primary.about_tagline}</span>
-    </section>
+    <HeroSection
+      mainHeading={slice.primary.heading}
+      tagLine={slice.primary.about_tagline}
+      classname="min-h-[60vh] md:min-h-[80vh]"
+    />
   );
 };
 

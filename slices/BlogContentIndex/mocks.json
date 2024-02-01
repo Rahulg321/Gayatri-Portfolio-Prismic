@@ -2,7 +2,18 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"blog_index_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "pack",
+				"type": "Text"
+			},
+			"blog_index_subhead": {
+				"__TYPE__": "FieldContent",
+				"value": "motion",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

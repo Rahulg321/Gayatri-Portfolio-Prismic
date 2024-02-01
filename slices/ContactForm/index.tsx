@@ -15,16 +15,16 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-slate-50"
+      className="bg-gray-200"
     >
-      <div className="big-container py-12">
-        <div className="text-center">
+      <div className="narrow-container">
+        <div className="py-12 text-center">
           <span className="block bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-4xl font-bold text-transparent">
             {slice.primary.formheading}
           </span>
-        </div>
-        <div className="text-center text-base">
-          <span>{slice.primary.form_description}</span>
+          <div className="mt-3 text-center text-xl">
+            <span>{slice.primary.form_description}</span>
+          </div>
         </div>
         <FormContact />
       </div>

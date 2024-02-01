@@ -2,17 +2,16 @@ import { Content } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { components } from "@/slices";
 import Heading from "./Heading";
+import HeroSection from "./HeroSection";
 
 export default function ContentBody({
   page,
 }: {
-  page: Content.BlogpostDocument | Content.FeaturedblogpostDocument;
+  page: Content.BlogpostDocument;
 }) {
   return (
     <>
-      <section className="flex min-h-[60vh] flex-col items-center justify-center bg-primary text-secondary">
-        <Heading>{page.data.title}</Heading>
-      </section>
+      <HeroSection mainHeading={page.data.title} />
       <article>
         <div className="narrow-container">
           <div className="prose prose-gray md:prose-lg lg:prose-xl  prose-li:m-0">

@@ -37,10 +37,6 @@ const routes: prismic.ClientConfig["routes"] = [
     path: "/blogs/:uid",
   },
   {
-    type: "featuredblogpost",
-    path: "/featuredblogs/:uid",
-  },
-  {
     type: "contact",
     path: "/contact",
   },
