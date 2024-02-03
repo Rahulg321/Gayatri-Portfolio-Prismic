@@ -26,7 +26,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <Toaster position="top-center" />
+        <Toaster position="bottom-center" />
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
