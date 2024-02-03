@@ -3,14 +3,21 @@ import Heading from "./Heading";
 import { KeyTextField } from "@prismicio/client";
 import classes from "./HeroSection.module.css";
 import clsx from "clsx";
+import CtaButton from "./CtaButton";
 
 type HeroSectionProps = {
   mainHeading: KeyTextField;
   tagLine?: KeyTextField;
   classname?: string;
+  children?: React.ReactNode;
 };
 
-const HeroSection = ({ mainHeading, tagLine, classname }: HeroSectionProps) => {
+const HeroSection = ({
+  mainHeading,
+  tagLine,
+  classname,
+  children,
+}: HeroSectionProps) => {
   return (
     <section
       className={clsx(
@@ -21,10 +28,11 @@ const HeroSection = ({ mainHeading, tagLine, classname }: HeroSectionProps) => {
     >
       <div className="big-container ">
         <Heading className="text-center text-secondary">{mainHeading}</Heading>
-        <div className="text-center">
+        <div className="my-4 text-center">
           <span className="text-secondary">{tagLine}</span>
         </div>
       </div>
+      {children}
     </section>
   );
 };

@@ -17,6 +17,11 @@ export type BlogContentIndexProps =
 const BlogContentIndex = async ({ slice }: BlogContentIndexProps) => {
   const client = createClient();
   const blogPosts = await client.getAllByType("blogpost");
+  // const result = await (async () => {
+  //   return new Promise((resolve) =>
+  //     setTimeout(() => resolve("Promise resolved after 3 seconds"), 3000),
+  //   );
+  // })();
 
   return (
     <section

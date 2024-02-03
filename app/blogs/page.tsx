@@ -3,6 +3,7 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { Suspense } from "react";
 
 export default async function Page() {
   const client = createClient();
@@ -10,7 +11,15 @@ export default async function Page() {
 
   return (
     <>
-      <SliceZone slices={page.data.slices} components={components} />
+      <Suspense
+        fallback={
+          <div className="min-h-screen">
+            <p>Loading blog posts...</p>
+          </div>
+        }
+      >
+        <SliceZone slices={page.data.slices} components={components} />
+      </Suspense>
     </>
   );
 }
