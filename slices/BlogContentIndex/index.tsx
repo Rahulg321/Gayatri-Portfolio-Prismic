@@ -1,28 +1,16 @@
 import BlogCard from "@/app/components/BlogCard";
+import BlogContentIndexSection from "@/app/components/BlogContentIndexSection";
 import Heading from "@/app/components/Heading";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Link from "next/link";
+import { Suspense } from "react";
 
-/**
- * Props for `BlogContentIndex`.
- */
 export type BlogContentIndexProps =
   SliceComponentProps<Content.BlogContentIndexSlice>;
 
-/**
- * Component for "BlogContentIndex" Slices.
- */
 const BlogContentIndex = async ({ slice }: BlogContentIndexProps) => {
-  const client = createClient();
-  const blogPosts = await client.getAllByType("blogpost");
-  // const result = await (async () => {
-  //   return new Promise((resolve) =>
-  //     setTimeout(() => resolve("Promise resolved after 3 seconds"), 3000),
-  //   );
-  // })();
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -39,46 +27,15 @@ const BlogContentIndex = async ({ slice }: BlogContentIndexProps) => {
           </div>
         </div>
       </div>
-      <div className="big-container">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((item, index) => (
-            <>
-              <Link href={`/blogs/${item.uid}`}>
-                <BlogCard
-                  key={index}
-                  title={item.data.title}
-                  image={item.data.blog_hero_image}
-                  smallDescription={item.data.small_description}
-                />
-              </Link>
-            </>
-          ))}
-          {blogPosts.map((item, index) => (
-            <>
-              <Link href={`/blogs/${item.uid}`}>
-                <BlogCard
-                  key={index}
-                  title={item.data.title}
-                  image={item.data.blog_hero_image}
-                  smallDescription={item.data.small_description}
-                />
-              </Link>
-            </>
-          ))}
-          {blogPosts.map((item, index) => (
-            <>
-              <Link href={`/blogs/${item.uid}`}>
-                <BlogCard
-                  key={index}
-                  title={item.data.title}
-                  image={item.data.blog_hero_image}
-                  smallDescription={item.data.small_description}
-                />
-              </Link>
-            </>
-          ))}
-        </div>
-      </div>
+      <Suspense
+        fallback={
+          <div className="narrow-container flex justify-center">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <BlogContentIndexSection />
+      </Suspense>
     </section>
   );
 };
