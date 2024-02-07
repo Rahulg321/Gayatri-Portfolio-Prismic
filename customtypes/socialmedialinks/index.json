@@ -1,0 +1,35 @@
+{
+  "id": "socialmedialinks",
+  "label": "SocialMediaLinks",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "instagram_link": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "upworkprofilelink": {
+        "type": "Link",
+        "config": {
+          "label": "UpworkProfileLink",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedinprofilelink": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedInProfileLink",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}

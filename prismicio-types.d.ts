@@ -545,7 +545,10 @@ export type ServiceDocument<Lang extends string = string> =
     Lang
   >;
 
-type ServicesDocumentDataSlicesSlice = ContentIndexSlice;
+type ServicesDocumentDataSlicesSlice =
+  | AboutHeroSlice
+  | MyMissionSlice
+  | MyGoalSlice;
 
 /**
  * Content for Services documents
@@ -561,6 +564,17 @@ interface ServicesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice> /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Services*
    *
    * - **Field Type**: Text
@@ -568,7 +582,7 @@ interface ServicesDocumentData {
    * - **API ID Path**: services.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -581,17 +595,6 @@ interface ServicesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Services*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: services.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -697,6 +700,60 @@ export type SettingsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<SettingsDocumentData>,
     "settings",
+    Lang
+  >;
+
+/**
+ * Content for SocialMediaLinks documents
+ */
+interface SocialmedialinksDocumentData {
+  /**
+   * Instagram Link field in *SocialMediaLinks*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socialmedialinks.instagram_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram_link: prismic.LinkField;
+
+  /**
+   * UpworkProfileLink field in *SocialMediaLinks*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socialmedialinks.upworkprofilelink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  upworkprofilelink: prismic.LinkField;
+
+  /**
+   * LinkedInProfileLink field in *SocialMediaLinks*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socialmedialinks.linkedinprofilelink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedinprofilelink: prismic.LinkField;
+}
+
+/**
+ * SocialMediaLinks document from Prismic
+ *
+ * - **API ID**: `socialmedialinks`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialmedialinksDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SocialmedialinksDocumentData>,
+    "socialmedialinks",
     Lang
   >;
 
@@ -888,6 +945,7 @@ export type AllDocumentTypes =
   | ServiceDocument
   | ServicesDocument
   | SettingsDocument
+  | SocialmedialinksDocument
   | TestimonialpageDocument
   | TestimonialsDocument;
 
@@ -1737,6 +1795,8 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavitemsItem,
+      SocialmedialinksDocument,
+      SocialmedialinksDocumentData,
       TestimonialpageDocument,
       TestimonialpageDocumentData,
       TestimonialpageDocumentDataSlicesSlice,

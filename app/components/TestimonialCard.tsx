@@ -1,8 +1,10 @@
 import React from "react";
-import { ImageField, KeyTextField } from "@prismicio/client";
+import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SiUpwork } from "react-icons/si";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
+import { PrismicNextLink } from "@prismicio/next";
 
 type TestimonialCardProps = {
   image: ImageField;
@@ -10,6 +12,8 @@ type TestimonialCardProps = {
   name: KeyTextField;
   position: KeyTextField;
   review: KeyTextField;
+  upworkProfileLink: LinkField;
+  linkedInProfileLink: LinkField;
 };
 
 const TestimonialCard = ({
@@ -17,6 +21,8 @@ const TestimonialCard = ({
   name,
   position,
   review,
+  upworkProfileLink,
+  linkedInProfileLink,
 }: TestimonialCardProps) => {
   return (
     <div className="rounded-2xl p-4 shadow-xl">
@@ -37,8 +43,12 @@ const TestimonialCard = ({
         </div>
       </div>
       <div className="mt-4 flex items-center justify-center gap-4 text-3xl">
-        <SiUpwork />
-        <FaLinkedin />
+        <PrismicNextLink field={upworkProfileLink}>
+          <SiUpwork />
+        </PrismicNextLink>
+        <PrismicNextLink field={linkedInProfileLink}>
+          <FaLinkedin />
+        </PrismicNextLink>
       </div>
     </div>
   );

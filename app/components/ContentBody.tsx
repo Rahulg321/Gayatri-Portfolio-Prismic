@@ -11,8 +11,8 @@ export default function ContentBody({
 }) {
   return (
     <>
-      <HeroSection mainHeading={page.data.title} />
-      <article>
+      <HeroSection mainHeading={page.data.title} classname="min-h-[70vh]" />
+      <article className="mt-4">
         <div className="narrow-container">
           <div className="prose prose-gray md:prose-lg lg:prose-xl  prose-li:m-0">
             <SliceZone slices={page.data.slices} components={components} />

@@ -4,14 +4,19 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GiCircleClaws } from "react-icons/gi";
+import { PrismicNextLink } from "@prismicio/next";
+import { createClient } from "@/prismicio";
+import { SiUpwork } from "react-icons/si";
 
-const Footer = () => {
+const Footer = async () => {
+  const client = createClient();
+  const socialLinks = await client.getSingle("socialmedialinks");
   return (
-    <footer className="bg-primary text-secondary py-8">
+    <footer className="bg-primary py-8 text-secondary">
       <div className="big-container">
-        <div className="border-b-2 md:items-center justify-start pb-2 flex flex-col sm:flex-row sm:justify-between">
+        <div className="flex flex-col justify-start border-b-2 pb-2 sm:flex-row sm:justify-between md:items-center">
           <div className="justify-start">
-            <span className="font-bold text-2xl">Gayatri Gupta</span>
+            <span className="text-2xl font-bold">Gayatri Gupta</span>
             <div className="flex gap-4">
               <span>Blog</span>
               <span className="">Testimonials</span>
@@ -19,29 +24,22 @@ const Footer = () => {
               <span>About</span>
             </div>
           </div>
-          <div className="flex flex-col">
-            <span>Join my newsletter</span>
-            <div className="flex items-center">
-              <input
-                type="text"
-                placeholder="Email Address..."
-                className="px-2 py-2 border"
-              />
-              <button className="border-secondary border-2 p-2 ml-2">
-                Subscribe
-              </button>
-            </div>
-          </div>
         </div>
 
-        <div className="flex mt-2 flex-col sm:flex-row justify-between">
+        <div className="mt-2 flex flex-col justify-between sm:flex-row">
           <div>
             <span> &#169; All rights reserved</span>
           </div>
-          <div className="flex gap-4 mt-2 md:m-0">
-            <SocialMediaIcon MediaIcon={FaLinkedin} />
-            <SocialMediaIcon MediaIcon={FaInstagram} />
-            <SocialMediaIcon MediaIcon={FaXTwitter} />
+          <div className="mt-2 flex gap-4 md:m-0">
+            <PrismicNextLink field={socialLinks.data.linkedinprofilelink}>
+              <SocialMediaIcon MediaIcon={FaLinkedin} />
+            </PrismicNextLink>
+            <PrismicNextLink field={socialLinks.data.instagram_link}>
+              <SocialMediaIcon MediaIcon={FaInstagram} />
+            </PrismicNextLink>
+            <PrismicNextLink field={socialLinks.data.upworkprofilelink}>
+              <SocialMediaIcon MediaIcon={SiUpwork} />
+            </PrismicNextLink>
           </div>
         </div>
       </div>
